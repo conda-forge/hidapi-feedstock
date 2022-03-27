@@ -1,5 +1,5 @@
 {% set name = "hidapi" %}
-{% set version = "0.11.0.post2" %}
+{% set version = "0.11.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hidapi-{{ version }}.tar.gz
-  sha256: da815e0d1d4b2ef1ebbcc85034572105dca29627eb61881337aa39010f2ef8cb
+  sha256: c984b7ec2fc2ea987cd44cf06947e55572498ed2d43c64890b4ab58b29af72bc
   patches:
     - fix_include.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -43,7 +43,7 @@ about:
   home: https://github.com/trezor/cython-hidapi
   summary: A Cython interface to the hidapi from https://github.com/libusb/hidapi
   license: LicenseRef-cython-hidapi OR GPL-3.0-only OR BSD-3-Clause
-  license_file: 
+  license_file:
     - LICENSE-orig.txt
     - LICENSE-bsd.txt
     - LICENSE-gpl3.txt
