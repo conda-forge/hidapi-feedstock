@@ -1,5 +1,5 @@
 {% set name = "hidapi" %}
-{% set version = "0.11.2" %}
+{% set version = "0.12.0.post2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hidapi-{{ version }}.tar.gz
-  sha256: c984b7ec2fc2ea987cd44cf06947e55572498ed2d43c64890b4ab58b29af72bc
+  sha256: 8ebb2117be8b27af5c780936030148e1971b6b7fda06e0581ff0bfb15e94ed76
   patches:
     - fix_include.patch
 
