@@ -1,11 +1,11 @@
-About hidapi
-============
+About hidapi-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hidapi-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/trezor/cython-hidapi
 
 Package license: LicenseRef-cython-hidapi OR GPL-3.0-only OR BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hidapi-feedstock/blob/main/LICENSE.txt)
 
 Summary: A Cython interface to the hidapi from https://github.com/libusb/hidapi
 
