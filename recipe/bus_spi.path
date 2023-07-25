@@ -1,0 +1,19 @@
+diff --git a/.DS_Store b/.DS_Store
+deleted file mode 100644
+index d69c3e8..0000000
+Binary files a/.DS_Store and /dev/null differ
+diff --git a/hidapi/linux/hid.c b/hidapi/linux/hid.c
+index 1b1d2c0..2e75954 100644
+--- a/hidapi/linux/hid.c
++++ b/hidapi/linux/hid.c
+@@ -44,6 +44,10 @@
+ 
+ #include "hidapi.h"
+ 
++#ifndef BUS_SPI
++#define BUS_SPI 0x1C
++#endif
++
+ #ifdef HIDAPI_ALLOW_BUILD_WORKAROUND_KERNEL_2_6_39
+ /* This definitions first appeared in Linux Kernel 2.6.39 in linux/hidraw.h.
+     hidapi doesn't support kernels older than that,

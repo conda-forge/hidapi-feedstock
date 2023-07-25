@@ -10,6 +10,7 @@ source:
   sha256: 99b18b28ec414ef9b604ddaed08182e486a400486f31ca56f61d537eed1d17cf
   patches:
     - fix_include.patch
+    - bus_spi.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
