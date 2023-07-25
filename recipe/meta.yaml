@@ -20,7 +20,7 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - cython
+    - cython <3  # See: https://github.com/trezor/cython-hidapi/issues/155
     - libudev  # [linux]
     - libusb
     - pip
