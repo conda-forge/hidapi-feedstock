@@ -12,14 +12,16 @@ source:
     - fix_include.patch
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  script:
+    - cythonize hid.pyx
+    - {{ PYTHON }} -m pip install . -vv
+  number: 2
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - cython
+    - cython <3
     - libudev  # [linux]
     - libusb
     - pip
