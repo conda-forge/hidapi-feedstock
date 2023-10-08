@@ -12,7 +12,9 @@ source:
     - fix_include.patch
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - cythonize hid.pyx
+    - {{ PYTHON }} -m pip install . -vv
   number: 2
 
 requirements:
