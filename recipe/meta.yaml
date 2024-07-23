@@ -1,5 +1,5 @@
 {% set name = "hidapi" %}
-{% set version = "0.12.0.post2" %}
+{% set version = "0.14.0.post1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hidapi-{{ version }}.tar.gz
-  sha256: 8ebb2117be8b27af5c780936030148e1971b6b7fda06e0581ff0bfb15e94ed76
+  sha256: 90b773cc4b917e92804153ee55a7a8bab948e51ba72d4838887c83e49ec2bf5f
   patches:
     - fix_include.patch
 
@@ -15,11 +15,12 @@ build:
   script:
     - cythonize hid.pyx
     - {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - cython <3
     - libudev  # [linux]
