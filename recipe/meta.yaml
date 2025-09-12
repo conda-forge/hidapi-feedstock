@@ -19,6 +19,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
+    - pkg-config
   host:
     - cython
     - libudev  # [linux]
