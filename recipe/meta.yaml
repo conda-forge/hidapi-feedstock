@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hidapi-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hidapi-{{ version }}.tar.gz
   sha256: 48fce253e526d17b663fbf9989c71c7ef7653ced5f4be65f1437c313fb3dbdf6
 
 build:
