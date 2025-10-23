@@ -1,27 +1,27 @@
 {% set name = "hidapi" %}
-{% set version = "0.12.0.post2" %}
+{% set version = "0.14.0.post4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hidapi-{{ version }}.tar.gz
-  sha256: 8ebb2117be8b27af5c780936030148e1971b6b7fda06e0581ff0bfb15e94ed76
-  patches:
-    - fix_include.patch
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hidapi-{{ version }}.tar.gz
+  sha256: 48fce253e526d17b663fbf9989c71c7ef7653ced5f4be65f1437c313fb3dbdf6
 
 build:
   script:
     - cythonize hid.pyx
     - {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
+    - pkg-config
   host:
-    - cython <3
+    - cython
     - libudev  # [linux]
     - libusb
     - pip
@@ -54,3 +54,4 @@ about:
 extra:
   recipe-maintainers:
     - goanpeca
+    - traversaro
